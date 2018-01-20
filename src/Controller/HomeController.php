@@ -3,15 +3,15 @@
 namespace App\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
-class HomeController extends Controller
+class HomeController
 {
     /**
      * @Route("/", name="home")
      */
-    public function index()
+    public function index(\Twig_Environment $twig)
     {
-        return $this->render('home.html.twig');
+        return new Response($twig->render('home.html.twig'));
     }
 }
