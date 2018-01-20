@@ -10,7 +10,7 @@ class HomeController
     /**
      * @Route("/", name="home")
      */
-    public function index(\Twig_Environment $twig)
+    public function index(\Twig_Environment $twig): Response
     {
         return new Response($twig->render('home.html.twig'));
     }
