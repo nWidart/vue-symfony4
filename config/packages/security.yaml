@@ -3,6 +3,8 @@ security:
     encoders:
         App\Entity\User:
             algorithm: bcrypt
+        Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUser:
+            algorithm: bcrypt
     providers:
         jwt:
             lexik_jwt: ~
