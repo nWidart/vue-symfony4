@@ -1,4 +1,16 @@
 {
+    "api-platform/api-pack": {
+        "version": "v1.0.1"
+    },
+    "api-platform/core": {
+        "version": "2.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "2.1",
+            "ref": "b50f8aa321cc40c380dda7605aa5cef66f476802"
+        }
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -77,6 +89,15 @@
     "ocramius/proxy-manager": {
         "version": "2.1.1"
     },
+    "phpdocumentor/reflection-common": {
+        "version": "1.0.1"
+    },
+    "phpdocumentor/reflection-docblock": {
+        "version": "4.2.0"
+    },
+    "phpdocumentor/type-resolver": {
+        "version": "0.4.0"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -129,6 +150,9 @@
         "version": "v4.0.3"
     },
     "symfony/event-dispatcher": {
+        "version": "v4.0.3"
+    },
+    "symfony/expression-language": {
         "version": "v4.0.3"
     },
     "symfony/filesystem": {
@@ -188,6 +212,9 @@
     "symfony/property-access": {
         "version": "v4.0.3"
     },
+    "symfony/property-info": {
+        "version": "v4.0.3"
+    },
     "symfony/routing": {
         "version": "4.0",
         "recipe": {
@@ -209,6 +236,18 @@
             "ref": "34eb245ce4194e7ae713558084180e2c532e7afd"
         }
     },
+    "symfony/serializer": {
+        "version": "v4.0.3"
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bcd6c570c017ea6ae5a7a6a027c929fd3542cd8"
+        }
+    },
     "symfony/twig-bridge": {
         "version": "v4.0.3"
     },
@@ -220,6 +259,9 @@
             "version": "3.3",
             "ref": "f75ac166398e107796ca94cc57fa1edaa06ec47f"
         }
+    },
+    "symfony/validator": {
+        "version": "v4.0.3"
     },
     "symfony/web-server-bundle": {
         "version": "3.3",
@@ -244,6 +286,12 @@
     },
     "twig/twig": {
         "version": "v2.4.4"
+    },
+    "webmozart/assert": {
+        "version": "1.2.0"
+    },
+    "willdurand/negotiation": {
+        "version": "v2.3.1"
     },
     "zendframework/zend-code": {
         "version": "3.3.0"
