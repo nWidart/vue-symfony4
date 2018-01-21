@@ -269,6 +269,12 @@ async-foreach@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/async-foreach/-/async-foreach-0.1.3.tgz#36121f845c0578172de419a97dbeb1d16ec34542"
 
+async-validator@~1.8.1:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/async-validator/-/async-validator-1.8.2.tgz#b77597226e96242f8d531c0d46ae295f62422ba4"
+  dependencies:
+    babel-runtime "6.x"
+
 async@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
@@ -452,6 +458,10 @@ babel-helper-replace-supers@^6.24.1:
     babel-template "^6.24.1"
     babel-traverse "^6.24.1"
     babel-types "^6.24.1"
+
+babel-helper-vue-jsx-merge-props@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-2.0.3.tgz#22aebd3b33902328e513293a8e4992b384f9f1b6"
 
 babel-helpers@^6.24.1:
   version "6.24.1"
@@ -736,7 +746,7 @@ babel-register@^6.26.0:
     mkdirp "^0.5.1"
     source-map-support "^0.4.15"
 
-babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
+babel-runtime@6.x, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
@@ -1581,6 +1591,10 @@ deep-extend@~0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
 
+deepmerge@^1.2.0:
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
+
 define-properties@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/define-properties/-/define-properties-1.1.2.tgz#83a73f2fea569898fb737193c8f873caf6d45c94"
@@ -1738,6 +1752,15 @@ ee-first@1.1.1:
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
   version "1.3.31"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.31.tgz#00d832cba9fe2358652b0c48a8816c8e3a037e9f"
+
+element-ui@^2.0.11:
+  version "2.0.11"
+  resolved "https://registry.yarnpkg.com/element-ui/-/element-ui-2.0.11.tgz#efc19d10270c13aa2b235f65bcb6ced3226550b8"
+  dependencies:
+    async-validator "~1.8.1"
+    babel-helper-vue-jsx-merge-props "^2.0.0"
+    deepmerge "^1.2.0"
+    throttle-debounce "^1.0.1"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -2372,6 +2395,10 @@ globule@^1.0.0:
 graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
+
+growly@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
 
 handle-thing@^1.2.5:
   version "1.2.5"
@@ -3535,6 +3562,15 @@ node-libs-browser@^2.0.0:
     url "^0.11.0"
     util "^0.10.3"
     vm-browserify "0.0.4"
+
+node-notifier@^5.1.2:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/node-notifier/-/node-notifier-5.2.1.tgz#fa313dd08f5517db0e2502e5758d664ac69f9dea"
+  dependencies:
+    growly "^1.3.0"
+    semver "^5.4.1"
+    shellwords "^0.1.1"
+    which "^1.3.0"
 
 node-pre-gyp@^0.6.39:
   version "0.6.39"
@@ -4717,7 +4753,7 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.6.33"
 
-"semver@2 || 3 || 4 || 5", semver@^5.3.0:
+"semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
@@ -4833,6 +4869,10 @@ shebang-command@^1.2.0:
 shebang-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
+
+shellwords@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
 
 signal-exit@^3.0.0:
   version "3.0.2"
@@ -5209,6 +5249,10 @@ tar@^2.0.0, tar@^2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
+throttle-debounce@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/throttle-debounce/-/throttle-debounce-1.0.1.tgz#dad0fe130f9daf3719fdea33dc36a8e6ba7f30b5"
+
 thunky@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/thunky/-/thunky-0.1.0.tgz#bf30146824e2b6e67b0f2d7a4ac8beb26908684e"
@@ -5550,6 +5594,14 @@ webpack-dev-server@^2.4.5:
     webpack-dev-middleware "1.12.2"
     yargs "6.6.0"
 
+webpack-notifier@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/webpack-notifier/-/webpack-notifier-1.5.1.tgz#cf5f6b9a1711f80969bbc4f7bd15d40ea7b18761"
+  dependencies:
+    node-notifier "^5.1.2"
+    object-assign "^4.1.0"
+    strip-ansi "^3.0.1"
+
 webpack-sources@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/webpack-sources/-/webpack-sources-1.1.0.tgz#a101ebae59d6507354d71d8013950a3a8b7a5a54"
@@ -5607,7 +5659,7 @@ which-module@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/which-module/-/which-module-2.0.0.tgz#d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a"
 
-which@1, which@^1.2.9:
+which@1, which@^1.2.9, which@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/which/-/which-1.3.0.tgz#ff04bdfc010ee547d780bec38e1ac1c2777d253a"
   dependencies:
