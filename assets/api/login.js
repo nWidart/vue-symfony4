@@ -12,7 +12,6 @@ export function login(username, password) {
 }
 
 export function getInfo(token) {
-  console.log(token); return false;
   return request({
     url: '/api/user/me',
     method: 'get',

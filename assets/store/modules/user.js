@@ -45,10 +45,10 @@ const user = {
     GetInfo({ commit, state }) {
       return new Promise((resolve, reject) => {
         getInfo(state.token).then(response => {
-          const data = response.data
-          commit('SET_ROLES', data.roles)
-          commit('SET_NAME', data.name)
-          commit('SET_AVATAR', data.avatar)
+          const data = response.data;
+          commit('SET_ROLES', data.roles);
+          commit('SET_NAME', data.username);
+          commit('SET_AVATAR', data.avatar);
           resolve(response)
         }).catch(error => {
           reject(error)
