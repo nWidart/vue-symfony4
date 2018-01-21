@@ -2,11 +2,11 @@ import request from '../utils/request'
 
 export function login(username, password) {
   return request({
-    url: '/user/login',
+    url: '/api/login_check',
     method: 'post',
     data: {
-      username,
-      password
+      '_username': username,
+      '_password': password
     }
   })
 }
