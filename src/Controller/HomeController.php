@@ -8,7 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 class HomeController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="homepage")
+     * @Route("/{route}", name="vue_sub_pages", requirements={"route"=".+"})
      */
     public function index(\Twig_Environment $twig): Response
     {
