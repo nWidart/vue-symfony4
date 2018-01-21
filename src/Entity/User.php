@@ -72,6 +72,18 @@ class User implements UserInterface, \Serializable
     {
     }
 
+    public function toArray(): array
+    {
+        return [
+            'username' => $this->username,
+            'email' => $this->email,
+            'isActive' => $this->isActive,
+            'roles' => [
+                'IS_AUTHENTICATED_FULLY',
+            ],
+        ];
+    }
+
     /** @see \Serializable::serialize() */
     public function serialize()
     {
