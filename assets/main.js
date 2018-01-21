@@ -9,6 +9,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 
+import './icons'
+
 Vue.use(ElementUI, { locale });
 
 new Vue({
