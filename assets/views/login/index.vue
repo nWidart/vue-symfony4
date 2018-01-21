@@ -75,17 +75,13 @@ export default {
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
         if (valid) {
-          this.loading = true
-          axios.post('/api/login_check', {
-            '_username': this.loginForm.username,
-            '_password': this.loginForm.password,
-          });
-          // this.$store.dispatch('Login', this.loginForm).then(() => {
-          //   this.loading = false
-          //   this.$router.push({ path: '/' })
-          // }).catch(() => {
-          //   this.loading = false
-          // })
+          this.loading = true;
+          this.$store.dispatch('Login', this.loginForm).then(() => {
+            this.loading = false;
+            this.$router.push({ path: '/' })
+          }).catch(() => {
+            this.loading = false
+          })
         } else {
           console.log('error submit!!')
           return false

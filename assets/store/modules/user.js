@@ -1,5 +1,6 @@
 import { login, logout, getInfo } from '../../api/login'
 import { getToken, setToken, removeToken } from '../../utils/auth'
+import axios from 'axios';
 
 const user = {
   state: {
@@ -29,7 +30,10 @@ const user = {
     Login({ commit }, userInfo) {
       const username = userInfo.username.trim()
       return new Promise((resolve, reject) => {
-        login(username, userInfo.password).then(response => {
+        axios.post('/api/login_check', {
+          'username': username,
+          'password': userInfo.password,
+        }).then(response => {
           const data = response.data
           setToken(data.token)
           commit('SET_TOKEN', data.token)

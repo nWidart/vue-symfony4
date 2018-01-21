@@ -5,8 +5,8 @@ export function login(username, password) {
     url: '/api/login_check',
     method: 'post',
     data: {
-      '_username': username,
-      '_password': password
+      'username': username,
+      'password': password
     }
   })
 }
