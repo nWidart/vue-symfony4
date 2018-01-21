@@ -6,8 +6,6 @@ security:
         Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUser:
             algorithm: bcrypt
     providers:
-        jwt:
-            lexik_jwt: ~
         our_db_provider:
             entity:
                 class: App\Entity\User
@@ -17,14 +15,12 @@ security:
             pattern:  ^/api/login
             stateless: true
             anonymous: true
-            provider: jwt
             form_login:
                 check_path:               /api/login_check
                 success_handler:          lexik_jwt_authentication.handler.authentication_success
                 failure_handler:          lexik_jwt_authentication.handler.authentication_failure
                 require_previous_session: false
         api:
-            provider: jwt
             pattern:   ^/api
             stateless: true
             guard:
