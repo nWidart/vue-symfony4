@@ -9,7 +9,7 @@ class HomeController
 {
     /**
      * @Route("/", name="homepage")
-     * @Route("/{route}", name="vue_sub_pages", requirements={"route"=".+"})
+     * @Route("/{route}", name="vue_sub_pages", requirements={"route"="^(?!api).+"})
      */
     public function index(\Twig_Environment $twig): Response
     {
