@@ -16,4 +16,12 @@ class UserController extends Controller
     {
         return JsonResponse::create(['username' => 'Admin']);
     }
+
+    /**
+     * @Route("/api/user/me", name="getUser")
+     */
+    public function me()
+    {
+        return JsonResponse::create($this->getUser()->toArray());
+    }
 }
