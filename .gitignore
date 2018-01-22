@@ -6,6 +6,8 @@
 /api/var/
 /api/vendor/
 ###< symfony/framework-bundle ###
+!/api/var/jwt/private-test.pem
+!/api/var/jwt/public-test.pem
 
 ###> symfony/webpack-encore-pack ###
 /ui/node_modules/
