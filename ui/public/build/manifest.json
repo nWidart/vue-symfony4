@@ -1,0 +1,15 @@
+{
+  "build/0.js": "http://localhost:8080/build/0.js",
+  "build/1.js": "http://localhost:8080/build/1.js",
+  "build/app.css": "http://localhost:8080/build/app.css",
+  "build/app.js": "http://localhost:8080/build/app.js",
+  "build/fonts/element-icons.ttf?t=1510834658947": "http://localhost:8080/build/fonts/element-icons.6f0a7632.ttf",
+  "build/fonts/element-icons.woff?t=1510834658947": "http://localhost:8080/build/fonts/element-icons.2fad952a.woff",
+  "build/images/example.svg": "http://localhost:8080/build/images/example.d26d02f7.svg",
+  "build/images/eye.svg": "http://localhost:8080/build/images/eye.a18f1b79.svg",
+  "build/images/form.svg": "http://localhost:8080/build/images/form.02998845.svg",
+  "build/images/password.svg": "http://localhost:8080/build/images/password.edb96aed.svg",
+  "build/images/table.svg": "http://localhost:8080/build/images/table.06e5f5cc.svg",
+  "build/images/tree.svg": "http://localhost:8080/build/images/tree.916b7905.svg",
+  "build/images/user.svg": "http://localhost:8080/build/images/user.54a04098.svg"
+}
