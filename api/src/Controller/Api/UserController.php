@@ -10,14 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 class UserController extends Controller
 {
     /**
-     * @Route("/api/users", name="user")
-     */
-    public function index()
-    {
-        return JsonResponse::create(['username' => 'Admin']);
-    }
-
-    /**
      * @Route("/api/user/me", name="getUser")
      */
     public function me()
