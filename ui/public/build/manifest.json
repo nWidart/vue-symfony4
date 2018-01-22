@@ -11,5 +11,10 @@
   "build/images/password.svg": "http://localhost:8080/build/images/password.edb96aed.svg",
   "build/images/table.svg": "http://localhost:8080/build/images/table.06e5f5cc.svg",
   "build/images/tree.svg": "http://localhost:8080/build/images/tree.916b7905.svg",
-  "build/images/user.svg": "http://localhost:8080/build/images/user.54a04098.svg"
+  "build/images/user.svg": "http://localhost:8080/build/images/user.54a04098.svg",
+  "build/3.js": "http://localhost:8080/build/3.js",
+  "build/4.js": "http://localhost:8080/build/4.js",
+  "build/5.js": "http://localhost:8080/build/5.js",
+  "build/images/404.png": "http://localhost:8080/build/images/404.a57b6f31.png",
+  "build/images/404_cloud.png": "http://localhost:8080/build/images/404_cloud.0f4bc32b.png"
 }
