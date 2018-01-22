@@ -1,17 +1,17 @@
 
 ###> symfony/framework-bundle ###
-.env
-/public/bundles/
-/var/
-/vendor/
+/api/.env
+/api/public/bundles/
+/api/public/build
+/api/var/
+/api/vendor/
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-pack ###
-/node_modules/
-/public/build/
+/ui/node_modules/
+ui/public/build/
 ###< symfony/webpack-encore-pack ###
 
 ###> symfony/web-server-bundle ###
 .web-server-pid
 ###< symfony/web-server-bundle ###
-ui/node_modules
