@@ -13,7 +13,7 @@ router.beforeEach((to, from, next) => {
         store.dispatch('GetInfo').then(res => { // Pull user information
           next()
         }).catch(() => {
-          store.dispatch('FedLogOut').then(() => {
+          store.dispatch('LogOut').then(() => {
             Message.error('Verification failed, please log in again');
             next({ path: '/login' })
           })
