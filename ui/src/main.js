@@ -4,7 +4,6 @@ import locale from 'element-ui/lib/locale/lang/en'
 import 'element-ui/lib/theme-chalk/index.css'
 
 import './styles/index.scss' // global css
-console.log('asd');
 import App from './App'
 import router from './router'
 import store from './store'
