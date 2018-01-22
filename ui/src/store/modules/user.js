@@ -25,7 +25,6 @@ const user = {
   },
 
   actions: {
-    // 登录
     Login({ commit }, userInfo) {
       const username = userInfo.username.trim()
       return new Promise((resolve, reject) => {
@@ -40,7 +39,6 @@ const user = {
       })
     },
 
-    // 获取用户信息
     GetInfo({ commit, state }) {
       return new Promise((resolve, reject) => {
         getInfo(state.token).then(response => {
@@ -55,7 +53,6 @@ const user = {
       })
     },
 
-    // 登出
     LogOut({ commit, state }) {
       return new Promise((resolve, reject) => {
         logout(state.token).then(() => {
@@ -69,7 +66,7 @@ const user = {
       })
     },
 
-    // 前端 登出
+    // Front end logout
     FedLogOut({ commit }) {
       return new Promise(resolve => {
         commit('SET_TOKEN', '')
