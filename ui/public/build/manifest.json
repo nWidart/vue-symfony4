@@ -16,5 +16,6 @@
   "build/4.js": "http://localhost:8080/build/4.js",
   "build/5.js": "http://localhost:8080/build/5.js",
   "build/images/404.png": "http://localhost:8080/build/images/404.a57b6f31.png",
-  "build/images/404_cloud.png": "http://localhost:8080/build/images/404_cloud.0f4bc32b.png"
+  "build/images/404_cloud.png": "http://localhost:8080/build/images/404_cloud.0f4bc32b.png",
+  "build/6.js": "http://localhost:8080/build/6.js"
 }
