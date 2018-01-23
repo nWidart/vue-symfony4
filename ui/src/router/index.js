@@ -33,6 +33,30 @@ export const constantRouterMap = [
       component: () => import('../views/dashboard/index')
     }]
   },
+  {
+    path: '/users',
+    component: Layout,
+    redirect: 'noredirect',
+    name: 'users',
+    meta: {
+      title: 'Users',
+      icon: 'fas fa-users'
+    },
+    children: [
+      {
+        path: 'user',
+        component: () => import('../views/users/UsersTableContainer'),
+        name: 'Users',
+        meta: { title: 'Users', noCache: true }
+      },
+      {
+        path: 'create',
+        component: () => import('../views/users/UsersTableContainer'),
+        name: 'Create user',
+        meta: { title: 'Create user', noCache: true }
+      },
+    ]
+  },
   { path: '*', redirect: '/404', hidden: true }
 ];
 
