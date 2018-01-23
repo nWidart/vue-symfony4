@@ -1,4 +1,5 @@
 api_platform:
+    enable_swagger_ui: true
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     swagger:

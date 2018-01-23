@@ -8,3 +8,6 @@ api:
     resource: '.'
     type: 'api_platform'
     prefix: '/api' # Optional
+swagger_ui:
+    path: /docs
+    controller: api_platform.swagger.action.ui
