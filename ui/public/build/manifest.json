@@ -1,21 +1,19 @@
 {
   "build/0.js": "http://localhost:8080/build/0.js",
   "build/1.js": "http://localhost:8080/build/1.js",
+  "build/2.js": "http://localhost:8080/build/2.js",
+  "build/3.js": "http://localhost:8080/build/3.js",
   "build/app.css": "http://localhost:8080/build/app.css",
   "build/app.js": "http://localhost:8080/build/app.js",
   "build/fonts/element-icons.ttf?t=1510834658947": "http://localhost:8080/build/fonts/element-icons.6f0a7632.ttf",
   "build/fonts/element-icons.woff?t=1510834658947": "http://localhost:8080/build/fonts/element-icons.2fad952a.woff",
+  "build/images/404.png": "http://localhost:8080/build/images/404.a57b6f31.png",
+  "build/images/404_cloud.png": "http://localhost:8080/build/images/404_cloud.0f4bc32b.png",
   "build/images/example.svg": "http://localhost:8080/build/images/example.d26d02f7.svg",
   "build/images/eye.svg": "http://localhost:8080/build/images/eye.a18f1b79.svg",
   "build/images/form.svg": "http://localhost:8080/build/images/form.02998845.svg",
   "build/images/password.svg": "http://localhost:8080/build/images/password.edb96aed.svg",
   "build/images/table.svg": "http://localhost:8080/build/images/table.06e5f5cc.svg",
   "build/images/tree.svg": "http://localhost:8080/build/images/tree.916b7905.svg",
-  "build/images/user.svg": "http://localhost:8080/build/images/user.54a04098.svg",
-  "build/3.js": "http://localhost:8080/build/3.js",
-  "build/4.js": "http://localhost:8080/build/4.js",
-  "build/5.js": "http://localhost:8080/build/5.js",
-  "build/images/404.png": "http://localhost:8080/build/images/404.a57b6f31.png",
-  "build/images/404_cloud.png": "http://localhost:8080/build/images/404_cloud.0f4bc32b.png",
-  "build/6.js": "http://localhost:8080/build/6.js"
+  "build/images/user.svg": "http://localhost:8080/build/images/user.54a04098.svg"
 }
