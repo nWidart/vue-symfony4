@@ -2,22 +2,32 @@
 
 namespace App\Tests;
 
-use PHPUnit\Framework\TestCase;
+use App\Entity\User;
+use Doctrine\ORM\Tools\SchemaTool;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpKernel\KernelInterface;
 
 class FirstTestCaseTest extends WebTestCase
 {
-    /** @test */
-    public function it_is_true()
+    public function setUp()
     {
-        $this->assertTrue(true);
-    }
+        self::bootKernel();
 
+        self::prime(self::$kernel);
+    }
     /**
      * test getUsersAction
      */
     public function testGetUsers()
     {
+        $user = new User();
+        $user->setEmail('john@doe.com');
+        $user->setIsActive(1);
+        $user->setUsername('jdoe');
+        $user->setPassword('admin');
+        $em = self::$kernel->getContainer()->get('doctrine')->getManager();
+        $em->persist($user);
+
         $client = $this->createAuthenticatedClient();
         $client->request('GET', '/api/users');
         // ...
@@ -38,8 +48,8 @@ class FirstTestCaseTest extends WebTestCase
             'POST',
             '/api/login_check',
             array(
-                'username' => $username,
-                'password' => $password,
+                '_username' => $username,
+                '_password' => $password,
             )
         );
 
@@ -49,5 +59,24 @@ class FirstTestCaseTest extends WebTestCase
         $client->setServerParameter('HTTP_Authorization', sprintf('Bearer %s', $data['token']));
 
         return $client;
+    }
+
+    public static function prime(KernelInterface $kernel)
+    {
+        // Make sure we are in the test environment
+        if ('test' !== $kernel->getEnvironment()) {
+            throw new \LogicException('Primer must be executed in the test environment');
+        }
+
+        // Get the entity manager from the service container
+        $entityManager = $kernel->getContainer()->get('doctrine.orm.entity_manager');
+
+        // Run the schema update tool using our entity metadata
+        $metadatas = $entityManager->getMetadataFactory()->getAllMetadata();
+
+        $schemaTool = new SchemaTool($entityManager);
+        $schemaTool->updateSchema($metadatas);
+
+        // If you are using the Doctrine Fixtures Bundle you could load these here
     }
 }
