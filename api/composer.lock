@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "84ae62e6299736640f5c4a36411d0344",
+    "content-hash": "0294e056823ffb60399c5ad117ccd1c2",
     "packages": [
         {
             "name": "api-platform/api-pack",
@@ -43,16 +43,16 @@
         },
         {
             "name": "api-platform/core",
-            "version": "v2.1.4",
+            "version": "v2.2.0-beta.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/api-platform/core.git",
-                "reference": "aa3ff0e9e68f31df4ea42154e2cce63b9df99b47"
+                "reference": "25414f393a3a0dd1c9703d3238d231e7a4369476"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/api-platform/core/zipball/aa3ff0e9e68f31df4ea42154e2cce63b9df99b47",
-                "reference": "aa3ff0e9e68f31df4ea42154e2cce63b9df99b47",
+                "url": "https://api.github.com/repos/api-platform/core/zipball/25414f393a3a0dd1c9703d3238d231e7a4369476",
+                "reference": "25414f393a3a0dd1c9703d3238d231e7a4369476",
                 "shasum": ""
             },
             "require": {
@@ -82,7 +82,8 @@
                 "doctrine/orm": "^2.5.2",
                 "friendsofsymfony/user-bundle": "^2.0",
                 "guzzlehttp/guzzle": "^6.0",
-                "nelmio/api-doc-bundle": "^2.11.2",
+                "justinrainbow/json-schema": "^5.0",
+                "nelmio/api-doc-bundle": "^2.13.3",
                 "php-mock/php-mock-phpunit": "^2.0",
                 "phpdocumentor/reflection-docblock": "^3.0 || ^4.0",
                 "phpdocumentor/type-resolver": "^0.2.1 || ^0.3 || 0.4",
@@ -94,7 +95,7 @@
                 "symfony/config": "^3.3 || ^4.0",
                 "symfony/console": "^3.3 || ^4.0",
                 "symfony/debug": "^2.8 || ^3.0 || ^4.0",
-                "symfony/dependency-injection": "^3.3@dev || ^4.0@dev",
+                "symfony/dependency-injection": "^3.3 || ^4.0",
                 "symfony/doctrine-bridge": "^2.8.12 || ^3.0 || ^4.0",
                 "symfony/event-dispatcher": "^3.3 || ^4.0",
                 "symfony/expression-language": "^2.8 || ^3.0 || ^4.0",
@@ -107,7 +108,8 @@
                 "symfony/security-bundle": "^3.0 || ^4.0",
                 "symfony/twig-bundle": "^3.1 || ^4.0",
                 "symfony/validator": "^3.3 || ^4.0",
-                "symfony/yaml": "^3.3 || ^4.0"
+                "symfony/yaml": "^3.3 || ^4.0",
+                "webonyx/graphql-php": "^0.10.2"
             },
             "suggest": {
                 "friendsofsymfony/user-bundle": "To use the FOSUserBundle bridge.",
@@ -118,12 +120,13 @@
                 "symfony/config": "To load XML configuration files.",
                 "symfony/expression-language": "To use authorization features.",
                 "symfony/security": "To use authorization features.",
-                "symfony/twig-bundle": "To use the Swagger UI integration."
+                "symfony/twig-bundle": "To use the Swagger UI integration.",
+                "webonyx/graphql-php": "To support GraphQL."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.1.x-dev"
+                    "dev-master": "2.2.x-dev"
                 }
             },
             "autoload": {
@@ -153,7 +156,7 @@
                 "rest",
                 "swagger"
             ],
-            "time": "2017-11-28T09:45:30+00:00"
+            "time": "2018-01-23T19:08:17+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2541,24 +2544,24 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v1.0.63",
+            "version": "v1.0.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "c409fe47e94c3c3c255e94356718ff15417afb0e"
+                "reference": "b366e902710c8dc8d8be97ed8d64ef574d9bffcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/c409fe47e94c3c3c255e94356718ff15417afb0e",
-                "reference": "c409fe47e94c3c3c255e94356718ff15417afb0e",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/b366e902710c8dc8d8be97ed8d64ef574d9bffcb",
+                "reference": "b366e902710c8dc8d8be97ed8d64ef574d9bffcb",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.1",
+                "composer-plugin-api": "^1.0",
                 "php": "^7.0"
             },
             "require-dev": {
-                "composer/composer": "^1.4",
+                "composer/composer": "^1.0.2",
                 "symfony/phpunit-bridge": "^3.2.8"
             },
             "type": "composer-plugin",
@@ -2583,7 +2586,7 @@
                     "email": "fabien.potencier@gmail.com"
                 }
             ],
-            "time": "2018-01-17T19:45:47+00:00"
+            "time": "2018-01-21T09:15:48+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -4584,6 +4587,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "api-platform/core": 10,
         "symfony/lts": 20
     },
     "prefer-stable": false,

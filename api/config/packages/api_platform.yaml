@@ -1,5 +1,11 @@
 api_platform:
     enable_swagger_ui: false
+    formats:
+        jsonapi:
+            mime_types: ['application/vnd.api+json']
+    error_formats:
+        jsonapi:
+            mime_types: ['application/vnd.api+json']
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
     swagger:
