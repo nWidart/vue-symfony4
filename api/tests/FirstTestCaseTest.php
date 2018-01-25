@@ -23,14 +23,16 @@ class FirstTestCaseTest extends WebTestCase
         $user = new User();
         $user->setEmail('john@doe.com');
         $user->setIsActive(1);
-        $user->setUsername('jdoe');
-        $user->setPassword('admin');
+        $user->setUsername('user');
+        $user->setPassword('password');
         $em = self::$kernel->getContainer()->get('doctrine')->getManager();
         $em->persist($user);
+        $em->flush();
+        var_dump($em->getRepository(User::class)->findAll());
 
         $client = $this->createAuthenticatedClient();
         $client->request('GET', '/api/users');
-        // ...
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
 
     /**
