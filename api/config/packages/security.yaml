@@ -3,8 +3,6 @@ security:
     encoders:
         App\Entity\User:
             algorithm: bcrypt
-        Lexik\Bundle\JWTAuthenticationBundle\Security\User\JWTUser:
-            algorithm: bcrypt
     providers:
         our_db_provider:
             entity:

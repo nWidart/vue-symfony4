@@ -13,8 +13,30 @@ class FirstTestCaseTest extends WebTestCase
     {
         self::bootKernel();
 
-        self::prime(self::$kernel);
+        $this->client = static::createClient();
+        $this->client->disableReboot();
+
+        $this->container = self::$kernel->getContainer();
+        $this->entityManager = $this->container->get('doctrine')->getManager();
+
+        $metadatas = $this->getMetadatas();
+
+        if (! empty($metadatas)) {
+            // Create SchemaTool
+            $tool = new SchemaTool($this->entityManager);
+            $tool->createSchema($metadatas);
+        } else {
+            throw new Doctrine\DBAL\Schema\SchemaException('No Metadata Classes to process.');
+        }
+
+        parent::setUp();
     }
+
+    protected function getMetadatas()
+    {
+        return $this->entityManager->getMetadataFactory()->getAllMetadata();
+}
+
     /**
      * test getUsersAction
      */
@@ -25,14 +47,13 @@ class FirstTestCaseTest extends WebTestCase
         $user->setIsActive(1);
         $user->setUsername('user');
         $user->setPassword('password');
-        $em = self::$kernel->getContainer()->get('doctrine')->getManager();
-        $em->persist($user);
-        $em->flush();
-        var_dump($em->getRepository(User::class)->findAll());
+        $this->entityManager->persist($user);
+        $this->entityManager->flush();
 
-        $client = $this->createAuthenticatedClient();
-        $client->request('GET', '/api/users');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->createAuthenticatedClient();
+
+        $this->client->request('GET', '/api/users');
+        $this->assertEquals(200, $this->client->getResponse()->getStatusCode());
     }
 
     /**
@@ -45,40 +66,19 @@ class FirstTestCaseTest extends WebTestCase
      */
     protected function createAuthenticatedClient($username = 'user', $password = 'password')
     {
-        $client = static::createClient();
-        $client->request(
+        $this->client->request(
             'POST',
             '/api/login_check',
-            array(
-                '_username' => $username,
-                '_password' => $password,
-            )
+            array(),
+            array(),
+            array('CONTENT_TYPE' => 'application/json'),
+            json_encode(array(
+                'username' => $username,
+                'password' => $password,
+            ))
         );
 
-        $data = json_decode($client->getResponse()->getContent(), true);
-
-        $client = static::createClient();
-        $client->setServerParameter('HTTP_Authorization', sprintf('Bearer %s', $data['token']));
-
-        return $client;
-    }
-
-    public static function prime(KernelInterface $kernel)
-    {
-        // Make sure we are in the test environment
-        if ('test' !== $kernel->getEnvironment()) {
-            throw new \LogicException('Primer must be executed in the test environment');
-        }
-
-        // Get the entity manager from the service container
-        $entityManager = $kernel->getContainer()->get('doctrine.orm.entity_manager');
-
-        // Run the schema update tool using our entity metadata
-        $metadatas = $entityManager->getMetadataFactory()->getAllMetadata();
-
-        $schemaTool = new SchemaTool($entityManager);
-        $schemaTool->updateSchema($metadatas);
-
-        // If you are using the Doctrine Fixtures Bundle you could load these here
+        $data = json_decode($this->client->getResponse()->getContent(), true);
+        $this->client->setServerParameter('HTTP_Authorization', sprintf('Bearer %s', $data['token']));
     }
 }
