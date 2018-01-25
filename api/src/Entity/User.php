@@ -39,6 +39,8 @@ class User implements UserInterface, \Serializable
      */
     private $isActive;
 
+    private $plainPassword;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -114,6 +116,23 @@ class User implements UserInterface, \Serializable
     public function setPassword($password): void
     {
         $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
+        $this->password = null;
     }
 
     /**
