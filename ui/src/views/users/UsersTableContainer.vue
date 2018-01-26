@@ -10,7 +10,6 @@
     import UsersTable from './UsersTable'
   export default {
     components: {UsersTable},
-    component: [UsersTable],
     data() {
       return {
         users: [],
