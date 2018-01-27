@@ -26,16 +26,17 @@ const user = {
 
   actions: {
     Login({ commit }, userInfo) {
-      const username = userInfo.username.trim()
-      return new Promise((resolve, reject) => {
-        login(username, userInfo.password).then(response => {
-          const data = response.data
-          setToken(data.token)
-          commit('SET_TOKEN', data.token)
-          resolve()
-        }).catch(error => {
-          reject(error)
-        })
+      const username = userInfo.username.trim();
+      return new Promise(async (resolve, reject) => {
+        try {
+          const response = await login(username, userInfo.password);
+          const data = response.data;
+          setToken(data.token);
+          commit('SET_TOKEN', data.token);
+          resolve();
+        } catch (error) {
+          reject(error);
+        }
       })
     },
 

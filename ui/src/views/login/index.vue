@@ -5,17 +5,22 @@
       <h3 class="title">vue-element-admin</h3>
       <el-form-item prop="username">
         <span class="svg-container svg-container_login">
-          <svg-icon icon-class="user" />
+          <i class="fas fa-user"></i>
         </span>
         <el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="username" />
       </el-form-item>
       <el-form-item prop="password">
         <span class="svg-container">
-          <svg-icon icon-class="password"></svg-icon>
+          <i class="fas fa-key"></i>
         </span>
-        <el-input name="password" :type="pwdType" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on"
-          placeholder="password"></el-input>
-          <span class="show-pwd" @click="showPwd"><svg-icon icon-class="eye" /></span>
+        <el-input name="password"
+                  :type="pwdType"
+                  @keyup.enter.native="handleLogin"
+                  v-model="loginForm.password"
+                  autoComplete="on"
+                  placeholder="password"
+        />
+          <span class="show-pwd" @click="showPwd"><i class="fas fa-eye"></i></span>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" style="width:100%;" :loading="loading" @click.native.prevent="handleLogin">
@@ -31,26 +36,23 @@
 </template>
 
 <script>
-import { isvalidUsername } from '../../utils/validate'
-import axios from 'axios';
-
 export default {
   name: 'login',
   data() {
     const validateUsername = (rule, value, callback) => {
-      if (!isvalidUsername(value)) {
-        callback(new Error('请输入正确的用户名'))
+      if (value.length < 1) {
+        callback(new Error('Username is required'))
       } else {
         callback()
       }
-    }
+    };
     const validatePass = (rule, value, callback) => {
       if (value.length < 5) {
-        callback(new Error('密码不能小于5位'))
+        callback(new Error('The password can not be less than 5 digits'))
       } else {
         callback()
       }
-    }
+    };
     return {
       loginForm: {
         username: 'admin',
@@ -73,18 +75,18 @@ export default {
       }
     },
     handleLogin() {
-      this.$refs.loginForm.validate(valid => {
-        if (valid) {
-          this.loading = true;
-          this.$store.dispatch('Login', this.loginForm).then(() => {
-            this.loading = false;
-            this.$router.push({ path: '/' })
-          }).catch(() => {
-            this.loading = false
-          })
-        } else {
-          console.log('error submit!!')
-          return false
+      this.$refs.loginForm.validate(async (valid) => {
+        if (valid === false) {
+          console.log('error submit!!');
+          return false;
+        }
+        this.loading = true;
+        try {
+          await this.$store.dispatch('Login', this.loginForm);
+          this.loading = false;
+          this.$router.push({ path: '/' });
+        } catch (error) {
+          this.loading = false;
         }
       })
     }
