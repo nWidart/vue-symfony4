@@ -20,6 +20,11 @@
       return {}
     },
     methods: {},
+    watch: {
+      users(newValue) {
+        console.log(newValue);
+      }
+    },
     mounted() {
     }
   }
