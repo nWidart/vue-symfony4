@@ -1,0 +1,54 @@
+version: '2.1'
+services:
+  app:
+    build:
+      context: ./docker/app
+    image: vuesf4/app:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - .:/var/www/html:cached
+    networks:
+      - vuesf4_net
+
+  redis:
+    build:
+      context: ./docker/redis
+    image: vuesf4/redis:latest
+    volumes:
+      - vuesf4_redisdata:/data
+    networks:
+      - vuesf4_net
+
+  mysql:
+    build:
+      context: ./docker/mysql
+    image: vuesf4/mysql:latest
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vuesf4
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+    volumes:
+      - vuesf4_mysqldata:/var/lib/mysql
+    networks:
+      - vuesf4_net
+
+  node:
+    build:
+      context: ./docker/node
+    image: vuesf4/node:latest
+    volumes:
+      - .:/var/www/html
+volumes:
+  vuesf4_redisdata:
+    driver: local
+  vuesf4_mysqldata:
+    driver: local
+
+networks:
+  vuesf4_net:
+    driver: bridge
