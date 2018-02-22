@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Doctrine;
+namespace App\User\Doctrine;
 
-use App\Entity\User;
+use App\User\Entity\User;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;

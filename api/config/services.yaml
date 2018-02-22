@@ -17,16 +17,29 @@ services:
     App\:
         resource: '../src/*'
         exclude: '../src/{Entity,Migrations,Tests}'
+    App\User\:
+        resource: '../src/User/*'
+        exclude: '../src/User/{Entity,Migrations,Tests}'
+
 
     # controllers are imported separately to make sure services can be injected
     # as action arguments even if you don't extend any base controller class
-    App\Controller\:
-        resource: '../src/Controller'
+#    App\Controller\:
+#        resource: '../src/Controller'
+#        tags: ['controller.service_arguments']
+
+    App\Blog\Controller\:
+        resource: '../src/Blog/Controller'
         tags: ['controller.service_arguments']
+
+    App\User\Controller\:
+        resource: '../src/User/Controller'
+        tags: ['controller.service_arguments']
+
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
-    App\Doctrine\HashPasswordListener:
+    App\User\Doctrine\HashPasswordListener:
         tags:
           - { name: doctrine.event_subscriber }

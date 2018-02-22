@@ -19,9 +19,9 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
         mappings:
-            App:
+            App\User:
                 is_bundle: false
                 type: annotation
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
+                dir: '%kernel.project_dir%/src/User/Entity'
+                prefix: 'App\User\Entity'
                 alias: App

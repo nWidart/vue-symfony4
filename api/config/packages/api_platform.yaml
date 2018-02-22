@@ -7,7 +7,7 @@ api_platform:
         jsonapi:
             mime_types: ['application/vnd.api+json']
     mapping:
-        paths: ['%kernel.project_dir%/src/Entity']
+        paths: ['%kernel.project_dir%/src/User/Entity']
     swagger:
         api_keys:
             apiKey:
