@@ -2,7 +2,7 @@
 
 namespace App\Tests;
 
-use App\Entity\User;
+use App\User\Entity\User;
 use Doctrine\DBAL\Schema\SchemaException;
 use Doctrine\ORM\Tools\SchemaTool;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
