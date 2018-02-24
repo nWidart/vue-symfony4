@@ -1,3 +1,7 @@
-controllers:
+user_controllers:
     resource: ../../src/User/Controller/
+    type: annotation
+
+blog_controllers:
+    resource: ../src/Blog/Controller/
     type: annotation
